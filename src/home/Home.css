@@ -1,0 +1,14 @@
+.titulo{
+    text-align: center;
+    color: aquamarine;
+}
+
+.imagem{
+    height: 400px;
+    width: auto;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
