@@ -1,5 +1,5 @@
-.textos{
-    font-weight: bold;
+.textos1{
+    font-weight: bold !important;
 }
 
 .imagem{
@@ -9,4 +9,8 @@
     min-height: 100vh;
     background-size: cover;
     background-position: center;
+}
+
+.text-decorator-none {
+    text-decoration: none;
 }
