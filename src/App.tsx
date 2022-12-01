@@ -7,6 +7,9 @@ import Navbar from './componentes/estaticos/navbar/Navbar';
 import Footer from './componentes/estaticos/footer/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './componentes/paginas/login/Login';
+import CadastroUsuario from './componentes/paginas/cadastroUsuario/CadastroUsusario';
+import ListaTema from './componentes/temas/ListaTema';
+import ListaPostagem from './componentes/postagens/listaPostagem/ListaPostagem';
 
 function App() {
   return (
@@ -18,8 +21,12 @@ function App() {
         <Route path='/home'element={<Home />}/>
           
         <Route path='/' element={<Login />}/>
-
         <Route path='/login' element={<Login />}/>
+        <Route path='/tema' element={<ListaTema />}/>
+        <Route path='/postagens' element={<ListaPostagem />}/>
+
+        
+        <Route path='/cadastrar' element={<CadastroUsuario />}/>
       </Routes>
       
       <Footer />
