@@ -10,27 +10,36 @@ import Login from './componentes/paginas/login/Login';
 import CadastroUsuario from './componentes/paginas/cadastroUsuario/CadastroUsusario';
 import ListaTema from './componentes/temas/ListaTema';
 import ListaPostagem from './componentes/postagens/listaPostagem/ListaPostagem';
+import CadastroTema from './componentes/temas/cadastrarTema/CadastrarTema';
+import CadastroPost from './componentes/postagens/cadastroPost/CadastroPost';
+import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
+import DeletarPostagens from './componentes/postagens/deletarPostagens/DeletarPostagem';
+import CadastrarTema from './componentes/temas/cadastrarTema/CadastrarTema';
 
 function App() {
   return (
     <>
-    <Router>
-      <Navbar />
+      <Router>
+        <Navbar />
 
-      <Routes>
-        <Route path='/home'element={<Home />}/>
-          
-        <Route path='/' element={<Login />}/>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/tema' element={<ListaTema />}/>
-        <Route path='/postagens' element={<ListaPostagem />}/>
+        <Routes>
+          <Route path='/home' element={<Home />} />
 
-        
-        <Route path='/cadastrar' element={<CadastroUsuario />}/>
-      </Routes>
-      
-      <Footer />
-    </Router>
+          <Route path='/' element={<Login />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/temas' element={<ListaTema />} />
+          <Route path='/posts' element={<ListaPostagem />} />
+          <Route path='/cadastrar' element={<CadastroUsuario />} />
+          <Route path='/formularioTema' element={<CadastrarTema />} />
+          <Route path='/formularioTema/:id' element={<CadastrarTema />} />
+          <Route path='/formularioPostagem/' element={<CadastroPost />} />
+          <Route path='/formularioPostagem/:id' element={<CadastroPost />} />
+          <Route path='/deletarTema/:id' element={<DeletarTema />} />
+          <Route path='/deletarPostagem/:id' element={<DeletarPostagens />} />
+        </Routes>
+
+        <Footer />
+      </Router>
     </>
   );
 }

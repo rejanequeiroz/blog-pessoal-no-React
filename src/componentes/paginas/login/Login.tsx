@@ -21,17 +21,19 @@ function Login(){
 
     4- criaremos o Hook userLocalStorage para armazenar o token que vamos trazer da API
 
-    5-
+    5- finalizaremos o metodo onSubmit, fazendo a comunicaçao com a API e armazenando o Token
+
+    6- por fim tilizaremos o HOOK useEffect, que vai verificar o Token e redirecionar para a pagina/home, utilizando o HOOK useNavigate
 
      */
    // userLogin puxa os dados do usuario // setUserLogin vai atualizar e guardar os dados do usuario
 const navigate = useNavigate()
    const [token, setToken] = useLocalStorage('token')
     const [userLogin, setUserLogin] = useState<UserLogin>({
-        id: 0,
+        
         usuario: '',
         senha: '',
-        token:''
+        
 
     })
  // updateModel vai recuperar as informaçao ou atualizar
@@ -55,7 +57,7 @@ async function onSubmit (e: ChangeEvent<HTMLFormElement>){
    e.preventDefault()
       try{
 
-        await login('/usuarios/logar', userLogin, setToken)
+        await login('/auth/logar', userLogin, setToken)
 
         alert('Usuario logado com Sucesso !')
 
