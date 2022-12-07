@@ -6,7 +6,9 @@ import { Box } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import UserLogin from '../../../models/UserLogin';
 import { login } from '../../../services/Service';
-import useLocalStorage from 'react-use-localstorage';
+import { addToken } from '../../../store/tokens/action';
+import { useDispatch } from 'react-redux';
+
 
 
 function Login(){
@@ -28,7 +30,9 @@ function Login(){
      */
    // userLogin puxa os dados do usuario // setUserLogin vai atualizar e guardar os dados do usuario
 const navigate = useNavigate()
-   const [token, setToken] = useLocalStorage('token')
+   const dispatch = useDispatch()
+    const [token, setToken] = useState('')
+   
     const [userLogin, setUserLogin] = useState<UserLogin>({
         
         usuario: '',
@@ -49,6 +53,7 @@ const navigate = useNavigate()
 
 useEffect(() => {
     if(token != ''){
+        dispatch(addToken(token))
         navigate('/home')
     }
 }, [token])
