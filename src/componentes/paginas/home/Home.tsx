@@ -8,6 +8,7 @@ import TabPostagem from '../../postagens/tabPostagem/TabPostagem';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import TokenState from '../../../store/tokens/tokenReducer';
+import { toast } from 'react-toastify';
 
 
 function Home() {
@@ -20,8 +21,16 @@ function Home() {
     
     useEffect(() => {
       if (token == "") {
-          alert("Você precisa estar logado")
-          navigate("/login")
+        toast.warn(' voce precisa estar logado 😣!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
   
       }
   }, [token])

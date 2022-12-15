@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 import TokenState from '../../store/tokens/tokenReducer';
 import { Token } from 'typescript';
 import { stat } from 'fs';
+import { toast } from 'react-toastify';
 
 
 function ListaTema() {
@@ -24,8 +25,16 @@ function ListaTema() {
 
   useEffect(()=>{
     if(token == ''){
-      alert("Você precisa estar logado")
-      navigate("/login")
+      toast.info('🦄 vc precisa estar logado!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     }
   }, [token])
 

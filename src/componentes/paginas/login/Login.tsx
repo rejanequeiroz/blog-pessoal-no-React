@@ -8,6 +8,7 @@ import UserLogin from '../../../models/UserLogin';
 import { login } from '../../../services/Service';
 import { addToken } from '../../../store/tokens/action';
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 
 
 
@@ -64,7 +65,16 @@ async function onSubmit (e: ChangeEvent<HTMLFormElement>){
 
         await login('/auth/logar', userLogin, setToken)
 
-        alert('Usuario logado com Sucesso !')
+        toast.success('usuario logado com sucesso 🤩!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
 
       }catch(error){
 
